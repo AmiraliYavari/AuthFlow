@@ -144,46 +144,6 @@ npm run dev
 
 ---
 
-# 📋 Roadmap
-
-## Phase 1
-
-- [x] Project Initialization
-- [ ] React Setup
-- [ ] Tailwind CSS
-- [ ] Routing
-- [ ] Authentication Layout
-
-## Phase 2
-
-- [ ] Login
-- [ ] Register
-- [ ] Form Validation
-- [ ] Protected Routes
-
-## Phase 3
-
-- [ ] Backend API
-- [ ] PostgreSQL
-- [ ] Prisma
-- [ ] JWT Authentication
-
-## Phase 4
-
-- [ ] User Profile
-- [ ] Avatar Upload
-- [ ] Email Verification
-- [ ] Password Reset
-
-## Phase 5
-
-- [ ] Docker
-- [ ] GitHub Actions
-- [ ] Testing
-- [ ] Production Deployment
-
----
-
 # 📸 Screenshots
 
 Coming Soon...
@@ -192,7 +152,7 @@ Coming Soon...
 
 # 📚 Documentation
 
-Documentation will be added inside the **docs/** directory.
+Documentation will be available inside the **docs/** directory.
 
 ---
 
