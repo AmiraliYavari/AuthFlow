@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes } from "react";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -9,21 +9,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`
-        w-full
-        rounded-xl
-        bg-blue-600
-        px-4
-        py-3
-        font-semibold
-        text-white
-        transition
-        hover:bg-blue-700
-        active:scale-[0.98]
-        disabled:cursor-not-allowed
-        disabled:opacity-50
-        ${className}
-      `}
+      className={`w-full rounded-xl bg-blue-600 px-4 py-3 font-semibold text-white ${className}`}
       {...props}
     >
       {children}
