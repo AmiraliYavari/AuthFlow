@@ -1,193 +1,227 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-=======
 # 🔐 AuthFlow
 
-A modern, production-ready full-stack authentication system built with React, TypeScript, Node.js, Express, Prisma and PostgreSQL.
+<div align="center">
 
-> Designed as a real-world authentication platform with scalable architecture, clean code, and security best practices.
+![Status](https://img.shields.io/badge/Status-In%20Development-blue?style=for-the-badge)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-22-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
+
+# Production-Ready Authentication System
+
+A modern, secure, and scalable full-stack authentication platform built with React, TypeScript, Node.js, Express, Prisma, and PostgreSQL.
+
+</div>
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-### Authentication
+## 🔑 Authentication
 
 - User Registration
-- User Login
-- Secure Logout
-- JWT Authentication
-- Refresh Token Rotation
-- Protected Routes
+- Secure Login
+- Logout
 - Remember Me
+- Protected Routes
+- JWT Authentication
+- Refresh Token Authentication
 
-### User Management
+---
+
+## 👤 User Management
 
 - User Profile
-- Edit Profile
+- Update Profile
 - Change Password
-- Avatar Upload
+- Upload Avatar
 - Delete Account
 
-### Email
+---
+
+## 📧 Email
 
 - Email Verification
 - Forgot Password
-- Password Reset
+- Reset Password
 
-### Security
+---
 
-- Password Hashing (bcrypt)
+## 🔒 Security
+
+- Password Hashing
+- JWT
+- Refresh Tokens
+- Secure Cookies
 - Rate Limiting
 - Helmet
 - CORS
 - Input Validation
-- Secure Cookies
 
-### Developer Experience
+---
+
+## ⚙️ Developer Experience
 
 - TypeScript
 - REST API
 - Prisma ORM
-- PostgreSQL
 - Docker
 - GitHub Actions
 - ESLint
 - Prettier
-- Husky
-- Environment Variables
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠 Tech Stack
 
-### Frontend
+## Frontend
 
 - React
 - TypeScript
 - Vite
 - Tailwind CSS
 - React Router
-- TanStack Query
 - React Hook Form
 - Zod
+- Axios
+- TanStack Query
+- Zustand
+- Framer Motion
 
-### Backend
+## Backend
 
 - Node.js
-- Express
-- Prisma
+- Express.js
 - PostgreSQL
+- Prisma ORM
 - JWT
 - bcrypt
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
-authflow/
-├── client/
-├── server/
-├── docs/
+AuthFlow
+│
+├── client
+│
+├── server
+│
+├── docs
+│
 └── README.md
 ```
 
 ---
 
-## 🚀 Roadmap
+# 🚀 Getting Started
 
-- [ ] Project setup
-- [ ] Authentication UI
-- [ ] REST API
-- [ ] Database integration
-- [ ] JWT authentication
-- [ ] Email verification
-- [ ] Password reset
-- [ ] Avatar upload
-- [ ] Admin dashboard
-- [ ] Docker support
-- [ ] GitHub Actions
-- [ ] Unit testing
-- [ ] Production deployment
+## Clone Repository
+
+```bash
+git clone https://github.com/AmiraliYavari/AuthFlow.git
+```
+
+## Go To Project
+
+```bash
+cd AuthFlow
+```
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+## Start Development Server
+
+```bash
+npm run dev
+```
 
 ---
 
-## 📄 License
+# 📋 Roadmap
 
-MIT
->>>>>>> b29ec42c650c0d24eaf01e2364a730cd7cd5a88b
+## Phase 1
+
+- [x] Project Initialization
+- [ ] React Setup
+- [ ] Tailwind CSS
+- [ ] Routing
+- [ ] Authentication Layout
+
+## Phase 2
+
+- [ ] Login
+- [ ] Register
+- [ ] Form Validation
+- [ ] Protected Routes
+
+## Phase 3
+
+- [ ] Backend API
+- [ ] PostgreSQL
+- [ ] Prisma
+- [ ] JWT Authentication
+
+## Phase 4
+
+- [ ] User Profile
+- [ ] Avatar Upload
+- [ ] Email Verification
+- [ ] Password Reset
+
+## Phase 5
+
+- [ ] Docker
+- [ ] GitHub Actions
+- [ ] Testing
+- [ ] Production Deployment
+
+---
+
+# 📸 Screenshots
+
+Coming Soon...
+
+---
+
+# 📚 Documentation
+
+Documentation will be added inside the **docs/** directory.
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push your branch
+5. Open a Pull Request
+
+---
+
+# ⭐ Support
+
+If you like this project, please consider giving it a ⭐ on GitHub.
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+<div align="center">
+
+Made with ❤️ by **Amirali Yavari**
+
+</div>
