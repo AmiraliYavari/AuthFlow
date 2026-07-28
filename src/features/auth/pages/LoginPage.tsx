@@ -6,20 +6,21 @@ import Logo from "../../../components/ui/Logo";
 export default function LoginPage() {
   return (
     <Card>
-      <div className="space-y-6">
+      <div className="space-y-5">
         <Logo />
 
         <Input
-          type="email"
-          placeholder="Email"
+          label="Email"
+          placeholder="example@email.com"
         />
 
         <Input
+          label="Password"
           type="password"
-          placeholder="Password"
+          placeholder="••••••••"
         />
 
-        <Button>
+        <Button fullWidth>
           Login
         </Button>
       </div>

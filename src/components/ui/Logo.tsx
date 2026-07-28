@@ -1,7 +1,14 @@
 export default function Logo() {
   return (
-    <h1 className="text-center text-3xl font-bold text-white">
-      Auth<span className="text-blue-500">Flow</span>
-    </h1>
+    <div className="flex flex-col items-center gap-2">
+      <h1 className="text-4xl font-black tracking-tight text-white">
+        Auth
+        <span className="text-blue-500">Flow</span>
+      </h1>
+
+      <p className="text-sm text-zinc-400">
+        Secure Authentication Platform
+      </p>
+    </div>
   );
 }
