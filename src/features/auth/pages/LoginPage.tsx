@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -15,42 +18,80 @@ export default function LoginPage() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
   });
 
-  function onSubmit(data: LoginSchema) {
+  async function onSubmit(data: LoginSchema) {
     console.log(data);
+
+    await new Promise((resolve) =>
+      setTimeout(resolve, 1500)
+    );
   }
 
   return (
-    <Card>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="space-y-5"
-      >
-        <Logo />
+    <motion.div
+      initial={{ opacity: 0, y: 25 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35 }}
+    >
+      <Card>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="space-y-5"
+        >
+          <Logo />
 
-        <Input
-          label="Email"
-          placeholder="Enter your email"
-          {...register("email")}
-          error={errors.email?.message}
-        />
+          <Input
+            label="Email"
+            placeholder="Enter your email"
+            {...register("email")}
+            error={errors.email?.message}
+          />
 
-        <Input
-          label="Password"
-          type="password"
-          placeholder="Enter your password"
-          {...register("password")}
-          error={errors.password?.message}
-        />
+          <Input
+            label="Password"
+            type="password"
+            placeholder="Enter your password"
+            {...register("password")}
+            error={errors.password?.message}
+          />
 
-        <Button fullWidth type="submit">
-          Sign In
-        </Button>
-      </form>
-    </Card>
+          <div className="flex items-center justify-between text-sm">
+            <label className="flex items-center gap-2 text-zinc-300">
+              <input type="checkbox" />
+              Remember me
+            </label>
+
+            <Link
+              to="/forgot-password"
+              className="text-blue-500 hover:underline"
+            >
+              Forgot password?
+            </Link>
+          </div>
+
+          <Button
+            loading={isSubmitting}
+            fullWidth
+            type="submit"
+          >
+            Sign In
+          </Button>
+
+          <p className="text-center text-sm text-zinc-400">
+            Don't have an account?{" "}
+            <Link
+              to="/register"
+              className="text-blue-500 hover:underline"
+            >
+              Create one
+            </Link>
+          </p>
+        </form>
+      </Card>
+    </motion.div>
   );
 }
