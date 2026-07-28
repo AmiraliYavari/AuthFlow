@@ -10,6 +10,8 @@ import ProfilePage from "../features/auth/pages/ProfilePage";
 
 import NotFoundPage from "../pages/NotFoundPage";
 
+import ProtectedRoute from "./ProtectedRoute";
+
 export const router = createBrowserRouter([
   {
     element: <AuthLayout />,
@@ -34,7 +36,11 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/profile",
-        element: <ProfilePage />,
+        element: (
+          <ProtectedRoute>
+            <ProfilePage />
+          </ProtectedRoute>
+        ),
       },
     ],
   },

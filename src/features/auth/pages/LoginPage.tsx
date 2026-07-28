@@ -1,6 +1,5 @@
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -14,7 +13,13 @@ import {
   type LoginSchema,
 } from "../schemas/loginSchema";
 
+import { useAuthStore } from "../../../store/auth.store";
+
 export default function LoginPage() {
+  const navigate = useNavigate();
+
+  const setAuth = useAuthStore((state) => state.setAuth);
+
   const {
     register,
     handleSubmit,
@@ -24,11 +29,18 @@ export default function LoginPage() {
   });
 
   async function onSubmit(data: LoginSchema) {
-    console.log(data);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    await new Promise((resolve) =>
-      setTimeout(resolve, 1500)
+    setAuth(
+      {
+        id: "1",
+        email: data.email,
+        username: "Amirali",
+      },
+      "fake-jwt-token"
     );
+
+    navigate("/profile");
   }
 
   return (
@@ -46,6 +58,7 @@ export default function LoginPage() {
 
           <Input
             label="Email"
+            type="email"
             placeholder="Enter your email"
             {...register("email")}
             error={errors.email?.message}
